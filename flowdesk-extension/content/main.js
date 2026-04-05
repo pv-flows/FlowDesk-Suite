@@ -141,6 +141,40 @@ const initApp = async () => {
     SpeedDial.init();
     await NotesModule.init();
     window.addEventListener('resize', clampAllElementsToViewport);
+
+    // =========================================================================
+    // EVENTOS DE TECLADO MUNDIAIS (ATALHOS)
+    // =========================================================================
+    document.addEventListener('keydown', (e) => {
+        // Atalho: Alt + 1 -> Abre o Painel Financeiro
+        if (e.altKey && e.key === "1") {
+            e.preventDefault();
+            const p = document.getElementById('painel-financeiro');
+            if (p) {
+                p.style.display = p.style.display === 'flex' ? 'none' : 'flex';
+                if (p.style.display === 'flex') {
+                    document.getElementById('fin-total')?.focus();
+                    p.style.zIndex = "10000";
+                    const n = document.getElementById('bloco-notas');
+                    if (n) n.style.zIndex = "9999";
+                }
+            }
+        }
+        // Atalho: Alt + ' -> Abre o Bloco de Notas / Overlay
+        if (e.altKey && e.key === "'") {
+            e.preventDefault();
+            const b = document.getElementById('bloco-notas');
+            if (b) {
+                b.style.display = b.style.display === 'flex' ? 'none' : 'flex';
+                if (b.style.display === 'flex') {
+                    document.getElementById('area-texto')?.focus();
+                    b.style.zIndex = "10000";
+                    const p = document.getElementById('painel-financeiro');
+                    if (p) p.style.zIndex = "9999";
+                }
+            }
+        }
+    });
 };
 
 if (document.readyState === 'loading') {
