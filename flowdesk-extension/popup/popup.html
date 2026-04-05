@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>FlowDesk</title>
+  <style>
+    body {
+      width: 250px;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 12px;
+      background: #f7fafc;
+      color: #1a202c;
+    }
+    h2 {
+      font-size: 14px;
+      margin: 0 0 10px 0;
+      color: #6b46c1;
+      text-align: center;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 6px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      color: #4a5568;
+      text-align: left;
+      transition: background 0.15s;
+    }
+    .btn:hover {
+      background: #edf2f7;
+    }
+    .btn.danger {
+      color: #e53e3e;
+      border-color: #feb2b2;
+    }
+    .btn.danger:hover {
+      background: #fff5f5;
+    }
+    #status-operador {
+      font-size: 11px;
+      color: #718096;
+      margin-bottom: 10px;
+      text-align: center;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+  <h2>⚙️ FlowDesk Menu</h2>
+  <div id="status-operador">Carregando operador...</div>
+  
+  <button class="btn" id="btn-change">1️⃣ Trocar Operador</button>
+  <button class="btn" id="btn-reset-pos">2️⃣ Resetar Posições</button>
+  <button class="btn" id="btn-export">3️⃣ Exportar Backup</button>
+  <button class="btn" id="btn-import">4️⃣ Importar Backup</button>
+  <button class="btn danger" id="btn-clear-hist">5️⃣ Limpar Histórico</button>
+  <button class="btn danger" id="btn-reset-all">6️⃣ Reset de Fábrica</button>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

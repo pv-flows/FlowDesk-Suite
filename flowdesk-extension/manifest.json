@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "FlowDesk Suite Corporativa",
+  "version": "5.1.5",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "FlowDesk"
+  },
+  "commands": {
+    "abrir-painel-financeiro": {
+      "suggested_key": { "default": "Ctrl+1" },
+      "description": "Abrir painel financeiro"
+    },
+    "abrir-bloco-notas": {
+      "suggested_key": { "default": "Ctrl+2" },
+      "description": "Abrir bloco de notas"
+    }
+  },
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://conversas.hyperflow.global/*"
+      ],
+      "js": [
+        "content/config.js",
+        "content/storage.js",
+        "content/utils.js",
+        "content/global-state.js",
+        "content/services/toast.js",
+        "content/services/modal.js",
+        "content/services/holiday.js",
+        "content/services/groq.js",
+        "content/modules/fin-module.js",
+        "content/modules/notes-module.js",
+        "content/modules/speed-dial.js",
+        "content/main.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://api.groq.com/*",
+    "https://script.google.com/*",
+    "https://calendar.google.com/*",
+    "https://www.generativelanguage.googleapis.com/*"
+  ]
+}
