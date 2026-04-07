@@ -4,7 +4,7 @@
 
 Migrada de um userscript Tampermonkey de 3.979 linhas para extensão nativa MV3 — sem dependências externas, sem bundler.
 
-**Autor:** Paulo Victor Freire da Silva — SER Educacional, Recife/PE
+**Autor:** Paulo Victor Freire da Silva
 
 ---
 
